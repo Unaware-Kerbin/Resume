@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peter Baumgartner — Network &amp; Security Engineer Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a2332;
+      --muted: #4a5568;
+      --rule: #c5cdd8;
+      --accent: #0b5f8a;
+      --accent-soft: #e8f2f7;
+      --page: #f7f8fa;
+      --paper: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "IBM Plex Sans", sans-serif;
+      color: var(--ink);
+      background: var(--page);
+      line-height: 1.45;
+      font-size: 10.5pt;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 8.5in;
+      margin: 1.25rem auto;
+      background: var(--paper);
+      padding: 0.65in 0.7in 0.6in;
+      box-shadow: 0 1px 3px rgba(26, 35, 50, 0.08), 0 8px 24px rgba(26, 35, 50, 0.06);
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.75rem 1.25rem;
+      align-items: end;
+      padding-bottom: 0.85rem;
+      border-bottom: 2.5px solid var(--accent);
+      margin-bottom: 0.95rem;
+    }
+
+    h1 {
+      font-family: "IBM Plex Serif", serif;
+      font-size: 26pt;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+
+    .title {
+      font-size: 11pt;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 0.2rem;
+      letter-spacing: 0.02em;
+    }
+
+    .contact {
+      text-align: right;
+      font-size: 9pt;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .contact a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    section { margin-bottom: 0.85rem; }
+
+    h2 {
+      font-size: 9pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 0.22rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .summary {
+      color: var(--ink);
+      font-size: 10.25pt;
+      line-height: 1.5;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 7.5rem 1fr;
+      gap: 0.28rem 0.75rem;
+    }
+
+    .skill-label {
+      font-weight: 600;
+      color: var(--ink);
+      font-size: 9.5pt;
+    }
+
+    .skill-items {
+      color: var(--muted);
+      font-size: 9.5pt;
+    }
+
+    .certs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.4rem;
+    }
+
+    .cert {
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 8.5pt;
+      font-weight: 600;
+      padding: 0.18rem 0.45rem;
+      border-radius: 2px;
+      letter-spacing: 0.01em;
+    }
+
+    .cert.clearance {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .job { margin-bottom: 0.7rem; }
+
+    .job:last-child { margin-bottom: 0; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .job-role {
+      font-weight: 700;
+      font-size: 10.5pt;
+      color: var(--ink);
+    }
+
+    .job-company {
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .job-meta {
+      font-size: 9pt;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .job-loc {
+      font-size: 9pt;
+      color: var(--muted);
+      margin-top: 0.05rem;
+      margin-bottom: 0.28rem;
+    }
+
+    ul {
+      padding-left: 1.05rem;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 0.18rem;
+      color: var(--ink);
+      font-size: 9.75pt;
+    }
+
+    li::marker { color: var(--accent); }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .edu-school { font-weight: 700; font-size: 10.5pt; }
+    .edu-degree { color: var(--muted); font-size: 9.75pt; margin-top: 0.1rem; }
+
+    .hint {
+      max-width: 8.5in;
+      margin: 0 auto 1rem;
+      padding: 0 0.5rem;
+      font-size: 9pt;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .hint strong { color: var(--ink); }
+
+    @media print {
+      body { background: #fff; }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        padding: 0.45in 0.55in;
+        max-width: none;
+      }
+      .hint { display: none; }
+      a { color: inherit !important; }
+      .cert { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    }
+
+    @page { margin: 0.4in; size: letter; }
+  </style>
+</head>
+<body>
+  <p class="hint">Add your email and phone if you want them on the PDF, then print (<strong>Ctrl/Cmd + P</strong>).</p>
+
+  <article class="page">
+    <header>
+      <div>
+        <h1>Peter Baumgartner</h1>
+        <p class="title">Network, Security &amp; Data Center Engineer</p>
+      </div>
+      <div class="contact">
+        <div>Wabash, Indiana</div>
+        <div><a href="mailto:you@email.com">you@email.com</a></div>
+        <div>(555) 555-5555</div>
+        <div><a href="https://www.linkedin.com/in/peter-baumgartner-b97b3513b/">linkedin.com/in/peter-baumgartner-b97b3513b</a></div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <p class="summary">
+        I am a Network, Security, and Data Center Engineer currently working as a Juniper resident engineer
+        at HPE. I support enterprise customers with Layer 2/3 troubleshooting, SRX firewall operations,
+        device upgrades, and Junos / Junos Space issues. I hold Security+ and Juniper professional
+        certifications across enterprise, data center, and service provider tracks (JNCIP-ENT, JNCIP-DC,
+        JNCIP-SP), and I maintain a U.S. Top Secret clearance. My background also includes SD-WAN
+        migrations, satcom support, and network operations.
+      </p>
+    </section>
+
+    <section>
+      <h2>Core Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-label">Platforms</div>
+        <div class="skill-items">Juniper (SRX, QFX, Junos Space), Cisco, SD-WAN</div>
+
+        <div class="skill-label">Networking</div>
+        <div class="skill-items">Layer 2 / Layer 3, BGP, OSPF, EVPN/VXLAN, 802.1X, DAI, IPSG, multicast, optics, PoE</div>
+
+        <div class="skill-label">Security</div>
+        <div class="skill-items">SRX policy and NAT, IPsec VPN, access control, PCI compliance documentation</div>
+
+        <div class="skill-label">Operations</div>
+        <div class="skill-items">SolarWinds / SNMP monitoring, TAC escalation, upgrades, customer training, documentation</div>
+
+        <div class="skill-label">Background</div>
+        <div class="skill-items">Data center networking, service provider routing, satcom, VoIP, remote site connectivity</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Certifications &amp; Clearance</h2>
+      <div class="certs">
+        <span class="cert">JNCIA-Junos</span>
+        <span class="cert">JNCIA-SEC</span>
+        <span class="cert">JNCIA-DC</span>
+        <span class="cert">JNCIS-ENT</span>
+        <span class="cert">JNCIS-SEC</span>
+        <span class="cert">JNCIS-SP</span>
+        <span class="cert">JNCIP-ENT</span>
+        <span class="cert">JNCIP-DC</span>
+        <span class="cert">JNCIP-SP</span>
+        <span class="cert">CompTIA Security+</span>
+        <span class="cert clearance">U.S. Top Secret Clearance</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-role">Resident Network Engineer</span>
+            <span class="job-company"> · Hewlett Packard Enterprise (Juniper)</span>
+          </div>
+          <div class="job-meta">May 2023 – Present</div>
+        </div>
+        <div class="job-loc">Wabash, Indiana</div>
+        <ul>
+          <li>Provide on-site resident support for enterprise customers, focusing on complex Layer 2 and Layer 3 issues that require detailed troubleshooting.</li>
+          <li>Troubleshoot SRX firewall problems involving security policy, NAT, and zone configuration, and review change impact with customers before implementation.</li>
+          <li>Configure and troubleshoot site-to-site IPsec VPN connectivity when remote locations cannot reach required resources through the firewall.</li>
+          <li>Support customers through device upgrades, document Juniper-recommended procedures, and leave updated operational documentation for future use.</li>
+          <li>Investigate potential defects through device logs, coordinate with TAC, and communicate next steps clearly with the customer.</li>
+          <li>Assist with Junos Space issues and day-to-day Junos CLI questions, including configuration guidance and best-practice recommendations.</li>
+          <li>Perform in-depth troubleshooting of 802.1X, Dynamic ARP Inspection (DAI), and IP Source Guard (IPSG) when access authentication or spoofing controls fail.</li>
+          <li>Resolve BGP and OSPF issues such as missing routes, neighbor instability, and redistribution problems following change windows.</li>
+          <li>Advise customers on data center designs involving EVPN/VXLAN fabrics, QFX leaf-spine architectures, and inter-POD traffic flows.</li>
+          <li>Support service provider routing scenarios, including MPLS path analysis, L3VPN reachability, and unexpected prefix behavior across the core.</li>
+          <li>Answer hardware questions related to optics compatibility and PoE power budgeting to reduce guesswork during deployments.</li>
+          <li>Train customer engineers on Juniper tools and resources so teams can operate more independently day to day.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-role">Network Administrator</span>
+            <span class="job-company"> · etrailer</span>
+          </div>
+          <div class="job-meta">Nov 2022 – Apr 2023</div>
+        </div>
+        <div class="job-loc">United States</div>
+        <ul>
+          <li>Designed and implemented network changes to reduce latency and improve site-to-site connectivity.</li>
+          <li>Built and maintained Junos configurations for interfaces, routing, and routine operational changes with a focus on minimizing outage risk.</li>
+          <li>Troubleshot enterprise switching and routing issues, including VLANs, spanning tree, and OSPF/BGP between sites, when performance degraded.</li>
+          <li>Maintained accurate network topology documentation and supported PCI compliance requirements.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-role">Network Operations Engineer</span>
+            <span class="job-company"> · Emerson</span>
+          </div>
+          <div class="job-meta">Jan 2022 – Nov 2022</div>
+        </div>
+        <div class="job-loc">St. Louis, Missouri</div>
+        <ul>
+          <li>Supported SD-WAN migrations and resolved remote site connectivity failures following cutovers.</li>
+          <li>Planned and assigned site-specific IP addressing, and coordinated implementations with each site’s point of contact.</li>
+          <li>Monitored network devices and servers with SolarWinds, and responded to outages in accordance with SLA requirements.</li>
+          <li>Managed firewall access issues and corrected security policy problems when legitimate traffic was being blocked.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-role">Satcom Network Engineer</span>
+            <span class="job-company"> · Leidos</span>
+          </div>
+          <div class="job-meta">Jul 2019 – Jan 2022</div>
+        </div>
+        <div class="job-loc">Greater St. Louis Area</div>
+        <ul>
+          <li>Provided phone support for satcom users experiencing voice, data, and BGP connectivity issues.</li>
+          <li>Built configurations to support smooth user transitions between systems, and guided users through verification steps when problems persisted.</li>
+          <li>Diagnosed RF, data path, and multicast issues when links appeared up but traffic was not flowing correctly.</li>
+          <li>Supported cleared mission operations under a U.S. Top Secret clearance, following strict access control and change management practices.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-role">25Q Multichannel Transmission Systems Operator</span>
+            <span class="job-company"> · U.S. Army Reserve</span>
+          </div>
+          <div class="job-meta">Jan 2015 – Jan 2021</div>
+        </div>
+        <div class="job-loc">United States</div>
+        <ul>
+          <li>Deployed field mobile networks using high-capacity radios, satellite terminals, and server stacks to route VoIP and data traffic.</li>
+          <li>Built and maintained connectivity in constrained field environments, developing strong troubleshooting habits for remote outages.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-role">Help Desk Administrator</span>
+            <span class="job-company"> · RoundTower Technologies, LLC</span>
+          </div>
+          <div class="job-meta">Nov 2018 – Jul 2019</div>
+        </div>
+        <div class="job-loc">Cincinnati, Ohio</div>
+        <ul>
+          <li>Resolved customer issues over the phone, including account unlocks, endpoint problems, and access requests.</li>
+          <li>Granted group membership and system access after request approval.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-role">Helpdesk Administrator</span>
+            <span class="job-company"> · ERP Suites</span>
+          </div>
+          <div class="job-meta">Feb 2018 – Nov 2018</div>
+        </div>
+        <div class="job-loc">Loveland, Ohio</div>
+        <ul>
+          <li>Monitored SolarWinds alerts and supported JDE project deployments through the help desk queue.</li>
+          <li>Performed password resets, account unlocks, and virtual server storage expansions.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-role">IT Technician</span>
+            <span class="job-company"> · Atos</span>
+          </div>
+          <div class="job-meta">Dec 2017 – Feb 2018</div>
+        </div>
+        <div class="job-loc">Mason, Ohio</div>
+        <ul>
+          <li>Troubleshot user computers and applications, and escalated tickets to the appropriate service teams.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="edu-header">
+        <div>
+          <div class="edu-school">Cincinnati State Technical and Community College</div>
+          <div class="edu-degree">Computer Systems Networking and Telecommunications</div>
+        </div>
+        <div class="job-meta">2016 – 2017</div>
+      </div>
+    </section>
+  </article>
+</body>
+</html>
